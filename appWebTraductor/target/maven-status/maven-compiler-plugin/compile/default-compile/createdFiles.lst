@@ -1,0 +1,6 @@
+com\netec\dao\ITraduccionDAO.class
+com\netec\services\TraduccionServiceImpl.class
+com\netec\controller\HomeController.class
+com\netec\AppWebTraductorApplication.class
+com\netec\entities\Traduccion.class
+com\netec\services\ITraductorService.class

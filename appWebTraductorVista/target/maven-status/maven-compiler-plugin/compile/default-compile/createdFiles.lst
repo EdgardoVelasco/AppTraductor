@@ -1,0 +1,7 @@
+com\netec\AppWebTraductorVistaApplication.class
+com\netec\entities\Data.class
+com\netec\service\ITraduccionVServiceImpl$1.class
+com\netec\service\ITraduccionVServiceImpl.class
+com\netec\controller\HomeController.class
+com\netec\entities\Traduccion.class
+com\netec\service\ITraductorVService.class
