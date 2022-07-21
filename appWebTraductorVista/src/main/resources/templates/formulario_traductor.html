@@ -1,0 +1,76 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        .centrar{
+            margin-left: 15%;
+        }
+    </style>
+    <title>Traductor</title>
+</head>
+<body>
+    <!--Nav bar-->
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="https://play-lh.googleusercontent.com/p6kS3dCcILt9Z4vRMxHXZTbRecqnZTx5ysBVp6Qe3fDofokRLuWjRxF8J0TkMTG2gKo" alt="" width="30" height="24">
+          Traductor
+        </a>
+        </div>
+      </nav>
+      <!--fin nav bar-->
+    
+      
+      <!--formulario-->
+      <br>
+      <br>
+      <div class="container-sm">
+      <form action="/salvar" method="post">
+        <div class="mb-3">
+        <select class="form-select form-select-sm" name="idioma" aria-label=".form-select-sm example">
+                <option selected value="it">Italiano</option>
+                <option value="en">Ingles</option>
+                <option value="fr">Frances</option>
+                <option value="yua">Maya</option>
+        </select>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nombre</label>
+          <textarea type="text" class="form-control" name="texto" id="texto" aria-describedby="emailHelp" ></textarea>
+          <div id="emailHelp" class="form-text">Nunca compartiremos tus datos</div>
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Traducir</button>
+      </form>
+    </div>
+      <!--fin formulario-->
+   <div class="container-md centrar"> <!--Inicio tabla-->
+      <table class="table table-bordered">
+        <caption class="caption-top ">Traducciones almacenadas</caption>
+        <thead >
+            <th scope="col">Texto original</th>
+            <th scope="col">Idioma</th>
+            <th scope="col">Texto traducido</th>
+        </thead>
+
+        <tbody>
+            <tr th:each="tmp : ${traducciones}">
+                <td>[[${tmp.textoOriginal}]]</td>
+                <td>[[${tmp.lenguajeDetectado}]]</td>
+                <td>[[${tmp.traduccion}]]</td>
+            </tr>
+
+        </tbody>
+        
+
+    </table>
+</div> <!--fin tabla-->
+
+    <!--script boostrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
